@@ -107,19 +107,18 @@
             maxEntries: maxEntries
         }
     });
-    
+
     self.toolbox.router.get('/*', self.toolbox.networkFirst, {
         cache: {
             name: contentCacheName,
             maxEntries: maxEntries
         }
     });
-    
+
     self.addEventListener("install", function(event) {
         return event.waitUntil(self.skipWaiting())
     });
     self.addEventListener("activate", function(event) {
         return event.waitUntil(self.clients.claim())
     })
-}
-)();
+})();
